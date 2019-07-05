@@ -1,9 +1,13 @@
 package demo
 
-class GenericDeserializer<T> {
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken
+
+
+class GenericDeserializer {
     
-    fun getType(): Unit {
-        println("test getType");
+    inline fun <reified T> getType(t: T): Unit {
+        println("test getType ${T::class}");
     }
     
 }

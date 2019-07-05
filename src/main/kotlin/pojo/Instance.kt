@@ -18,7 +18,9 @@ data class Instance(
     val username: String,
     val password: String,
     val apikey: String,
-    val ready: Boolean
+    val ready: Boolean,
+    
+    val error: String
 ) {
     class Deserializer : ResponseDeserializable<Instance> {
         override fun deserialize(content: String): Instance = Gson().fromJson(content, Instance::class.java)

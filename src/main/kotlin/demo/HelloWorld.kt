@@ -23,9 +23,9 @@ fun getGreeting(): String {
 fun main(args: Array<String>) {
     println(getGreeting())
     
-    /*FuelManager.instance.basePath = "https://customer.cloudkarafka.com/api"
+    FuelManager.instance.basePath = "https://customer.cloudkarafka.com/api"
     
-    val (request, response, result) = Fuel.get("/instances", listOf())
+    /*val (request, response, result) = Fuel.get("/instances", listOf())
     .header(Headers.AUTHORIZATION, "Basic YTNkOTljOTEtNTQyMi00NTFkLWEyM2UtMTQzYTQ1OTgzOGE5OkdvdGhhbUAyNQ==")
     .responseObject(Instance.ArrayDeserializer())
 
@@ -52,7 +52,26 @@ fun main(args: Array<String>) {
     var (instance3, err3) = result3
     println("\n\n$instance3")*/
    
-   println("test")
+   //println("test")
+   
+   //GenericDeserializer().getType<Instance.ArrayDeserializer>(Instance.ArrayDeserializer())
+   
+   /*val (request4, response4, result4) = Fuel.put("/instances/3333", listOf(
+        "name" to "cli_test_instance_03"
+    ))
+    .header(Headers.AUTHORIZATION, "Basic YTNkOTljOTEtNTQyMi00NTFkLWEyM2UtMTQzYTQ1OTgzOGE5OkdvdGhhbUAyNQ==")
+    .responseObject(Instance.Deserializer())
+    
+    var (instance4, err4) = result4
+    println("\n\n$instance4")*/
+   
+   val (request5, response5, result5) = Fuel.delete("/instances/9524", listOf())
+    .header(Headers.AUTHORIZATION, "Basic YTNkOTljOTEtNTQyMi00NTFkLWEyM2UtMTQzYTQ1OTgzOGE5OkdvdGhhbUAyNQ==")
+    .responseObject(Instance.Deserializer())
+    
+    var (instance5, err5) = result5
+    println("\n\n$instance5")
+    
+    
     
 }
-
