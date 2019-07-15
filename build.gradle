@@ -11,13 +11,13 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'application'
 
-mainClassName = 'demo.HelloWorldKt'
+mainClassName = 'demo.DeserializeGson2'
 version = '1.0'
 
 defaultTasks 'run'
 
 repositories {
-    jcenter()
+    mavenLocal()
 }
 
 dependencies {
@@ -33,7 +33,7 @@ dependencies {
 }
 
 jar {
-    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { compileJava.classpath.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest {
         attributes("Main-Class": "$mainClassName" )
     }
